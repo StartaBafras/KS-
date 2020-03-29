@@ -24,3 +24,24 @@ def geçenler(istasyon):# istasyondan geçen hatları verir
     del hat,duraklar
     print(istasyondan_geçen)
     return istasyondan_geçen
+
+def doğrudan(geçen_trenler,hedef):#Hatların hedefe doğrudan gidip gitmediğini kontrol eder
+    sayaç=len(geçen_trenler)-1
+    while sayaç > -1:
+        for i in geçen_trenler[sayaç]:
+            if i == hedef:
+                print(i)
+                print(geçen_trenler[sayaç][0],"ile doğrudan gidilir")
+                print("Kalkış istasyonu:{} \n Varış istasyonu: {}".format(kalkış,varış))
+                del geçen_trenler[sayaç]
+                #sayaç=len(geçen_trenler)-1
+                print(geçen_trenler)
+            if i == NameError:
+                sayaç -= 1 
+            #else:
+                #print(sayaç)
+                #print(i)
+                #print(geçen_trenler[sayaç][0],"ile doğrudan gidilmez")
+        #sayaç -= 1
+        #print(sayaç)
+    del i
