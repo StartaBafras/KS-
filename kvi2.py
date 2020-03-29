@@ -2,9 +2,9 @@ import sqlite3
 import denemeler #Böyle yapınca global değişken nedense çalışmıyor fonksiyonu buraya kopyalamak gerekti
 #kalkış=input("Kalkış İskelesi: ")
 #varış=input("Varış İskelesi: ")
-kalkış="İzmit"
-varış="Karamürsel"
-
+kalkış="Gölcük"
+varış="Tütünçiftlik"
+gidenler= []
 
 
 def geçenler(istasyon):# istasyondan geçen hatları verir
@@ -32,18 +32,26 @@ def doğrudan(geçen_trenler,hedef):#Hatların hedefe doğrudan gidip gitmediği
     while sayaç > -1:
         for i in geçen_trenler[sayaç]:
             if i == hedef:
-                print(geçen_trenler[sayaç][0],"ile gidilir")
+                print(i)
+                print(geçen_trenler[sayaç][0],"ile doğrudan gidilir")
+                print("Kalkış istasyonu:{} \n Varış istasyonu: {}".format(kalkış,varış))
                 del geçen_trenler[sayaç]
-        sayaç -= 1
+                #sayaç=len(geçen_trenler)-1
+                print(geçen_trenler)
+            if i == NameError:
+                sayaç -= 1 
+            #else:
+                #print(sayaç)
+                #print(i)
+                #print(geçen_trenler[sayaç][0],"ile doğrudan gidilmez")
+        #sayaç -= 1
+        #print(sayaç)
     del i
 
 
 ilk_durak = []
 ilk_durak = geçenler(kalkış)
-print(ilk_durak)
-doğrudan(ilk_durak,varış)
-print(ilk_durak)
-print("###############################")
+
 
 def aktarma(aktarma_yapabilecekler):
     for i in aktarma_yapabilecekler:
@@ -51,5 +59,16 @@ def aktarma(aktarma_yapabilecekler):
             durak_2 = []
             durak_2 = geçenler(duraklar)
             doğrudan(durak_2,varış)
-aktarma(ilk_durak)
+
+def doğrudan2(geçen_trenler,varış):
+    for hat in geçen_trenler:
+        for duraklar in hat:
+            if duraklar == varış:
+                print(hat[0],"doğrudan gider")
+
+
+
+doğrudan2(ilk_durak,varış)
+
+
 
