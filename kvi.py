@@ -1,5 +1,5 @@
 import sqlite3
-import denemeler #Böyle yapınca global değişken nedense çalışmıyor fonksiyonu buraya kopyalamak gerekti
+#import denemeler #Böyle yapınca global değişken nedense çalışmıyor fonksiyonu buraya kopyalamak gerekti
 #kalkış=input("Kalkış İskelesi: ")
 #varış=input("Varış İskelesi: ")
 kalkış="İzmit"
