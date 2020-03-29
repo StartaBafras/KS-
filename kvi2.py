@@ -1,5 +1,5 @@
 import sqlite3
-import denemeler #Böyle yapınca global değişken nedense çalışmıyor fonksiyonu buraya kopyalamak gerekti
+#import denemeler #Böyle yapınca global değişken nedense çalışmıyor fonksiyonu buraya kopyalamak gerekti
 #kalkış=input("Kalkış İskelesi: ")
 #varış=input("Varış İskelesi: ")
 kalkış="Gölcük"
@@ -64,7 +64,7 @@ def doğrudan2(geçen_trenler,varış):
     for hat in geçen_trenler:
         for duraklar in hat:
             if duraklar == varış:
-                print(hat[0],"doğrudan gider")
+                print(hat[0],"doğrudan hedefee gider")
 
 
 
