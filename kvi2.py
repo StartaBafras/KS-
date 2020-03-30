@@ -1,8 +1,8 @@
 import sqlite3
 #kalkış=input("Kalkış İskelesi: ")
 #varış=input("Varış İskelesi: ")
-kalkış="Gölcük"
-varış="Tütünçiftlik"
+kalkış="İzmit"
+varış="Karamürsel"
 gidenler= []
 
 
@@ -35,7 +35,7 @@ def aktarma(aktarma_yapabilecekler):
         for duraklar in i:
             durak_2 = []
             durak_2 = geçenler(duraklar)
-            doğrudan(durak_2,varış)
+            doğrudan2(bulunulan_durak,durak_2,varış)
 
 def doğrudan2(bulunulan_durak,geçen_trenler,varış):
     for hat in geçen_trenler:
@@ -45,7 +45,8 @@ def doğrudan2(bulunulan_durak,geçen_trenler,varış):
 
 
 
-doğrudan2(bulunulan_durak,ilk_durak,varış)
 
+doğrudan2(bulunulan_durak,ilk_durak,varış)
+aktarma(ilk_durak)
 
 
