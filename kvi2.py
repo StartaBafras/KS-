@@ -42,11 +42,9 @@ def doğrudan2(bulunulan_durak,geçen_trenler,varış):
         for duraklar in hat:
             if duraklar == varış:
                 print(hat[0],"Bulunulan durak: {} Varılan durak: {}".format(bulunulan_durak,varış))
-
-
+                bulunma=hat.index(hat[0])#Geçen_trenler listesinin hangi elemanı doğrudan gidiliyor tespiti
+                del ilk_durak[bulunma]#Doğrudan giden hat aktarmayı kontrol edecek fonksiyona soru yaratmaması için siliniyor
 
 
 doğrudan2(bulunulan_durak,ilk_durak,varış)
-aktarma(ilk_durak)
-
-
+#aktarma(ilk_durak)
