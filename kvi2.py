@@ -31,11 +31,18 @@ ilk_durak = geçenler(kalkış)
 
 
 def aktarma(aktarma_yapabilecekler):
-    for i in aktarma_yapabilecekler:
-        for duraklar in i:
+    for i in aktarma_yapabilecekler: #Doğrudan gidenlerin ayıklanmasıyla elde kalan hatlar aktarılır
+        for duraklar in i:#elde kalan hatların durakları atanır
             durak_2 = []
-            durak_2 = geçenler(duraklar)
-            doğrudan2(bulunulan_durak,durak_2,varış)
+            durak_2 = geçenler(duraklar) 
+            #doğrudan2(bulunulan_durak,durak_2,varış)
+            print(durak_2)
+            for hat in durak_2:
+                for duraklar in hat:
+                    if duraklar == varış:
+                        print(hat[0],"Bulunulan durak: {} Varılan durak: {}".format(bulunulan_durak,varış))
+                        bulunma=hat.index(hat[0])#Geçen_trenler listesinin hangi elemanı doğrudan gidiliyor tespiti
+                        del durak_2[bulunma]#Doğrudan giden hat aktarmayı kontrol edecek fonksiyona soru yaratmaması için siliniyor
 
 def doğrudan2(bulunulan_durak,geçen_trenler,varış):
     for hat in geçen_trenler:
@@ -47,4 +54,5 @@ def doğrudan2(bulunulan_durak,geçen_trenler,varış):
 
 
 doğrudan2(bulunulan_durak,ilk_durak,varış)
-#aktarma(ilk_durak)
+
+aktarma(ilk_durak)
