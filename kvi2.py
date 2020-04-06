@@ -2,12 +2,11 @@ import sqlite3
 #kalkış=input("Kalkış İskelesi: ")
 #varış=input("Varış İskelesi: ")
 kalkış="İzmit"
-varış="Karamürsel"
+varış="Hereke"
 gidenler= []
 
 
 def geçenler(istasyon):# istasyondan geçen hatları verir
-    import sqlite3
     global bulunulan_durak
     bulunulan_durak = istasyon
     dere=sqlite3.connect("/home/beyhan/Belgeler/Python/KDU/rıhtım.db")
@@ -36,6 +35,7 @@ def aktarma(aktarma_yapabilecekler):#Doğrudan gidenlerin ayıklanmasıyla elde 
         for duraklar in i:#Ayıklanan hattın durakları ayrılır
             if duraklar != "Hat-1" and duraklar!= "Hat-2" and duraklar!= "Hat-3" and duraklar!= "Hat-4" and duraklar != i[1]:
                 hatlar_2 = geçenler(duraklar)
+                #print(i[0],"İle aşağıda bulunulan duraklara gidilip aktarma yapılarak varış yerine gidilebilir.")
                 doğrudan2(duraklar,hatlar_2,varış)
 
 
