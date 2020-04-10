@@ -9,7 +9,7 @@ gidenler= []
 def geçenler(istasyon):# istasyondan geçen hatları verir
     global bulunulan_durak
     bulunulan_durak = istasyon
-    dere=sqlite3.connect("/home/beyhan/Belgeler/Python/KDU/rıhtım.db")
+    dere=sqlite3.connect("/home/beyhan/Belgeler/Python/KDU/KSI/rıhtım.db")
     im=dere.cursor()
     #im.execute("create table if not exists hatlar('hat','durak1','durak2','durak3','durak4','durak5')")
     im.execute("select * from hatlar")
@@ -33,7 +33,7 @@ def aktarma(aktarma_yapabilecekler):#Doğrudan gidenlerin ayıklanmasıyla elde 
     hatlar_2 = []
     for i in aktarma_yapabilecekler: #Aktarma yapabilecek birden fazla hat olabileceğinden tek tek hatlar ayıklanır
         for duraklar in i:#Ayıklanan hattın durakları ayrılır
-            if duraklar != "Hat-1" and duraklar!= "Hat-2" and duraklar!= "Hat-3" and duraklar!= "Hat-4" and duraklar != i[1]:
+            if duraklar != "Hat-1" and duraklar!= "Hat-2" and duraklar!= "Hat-3" and duraklar!= "Hat-4" and duraklar != i[1] and duraklar != "Boş":
                 hatlar_2 = geçenler(duraklar)
                 #print(i[0],"İle aşağıda bulunulan duraklara gidilip aktarma yapılarak varış yerine gidilebilir.")
                 doğrudan2(duraklar,hatlar_2,varış)
